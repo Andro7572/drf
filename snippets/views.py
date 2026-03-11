@@ -1,11 +1,12 @@
-#snippets/views.py
+# snippets/views.py
 from rest_framework import generics
 from .models import Snippet
 from .serializers import SnippetSerializer
 
+
 class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer()
+    serializer_class = SnippetSerializer
 
 
 class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
